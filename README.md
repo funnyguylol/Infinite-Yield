@@ -4,7 +4,14 @@
 </div>
 Infinite Yield FE is a powerful FE admin script for Roblox that brings a host of exciting features for developers and players.
 
-## Exciting Features
+## Loadstring
+
+Loadstring to execute Infinite Yield!
+```lua
+loadstring(game:HttpGet('https://raw.githubusercontent.com/DarkNetworks/Infinite-Yield/main/latest.lua'))()
+```
+
+## Features
 
 - 🌐 **Support Server**: `discord / support / help` - Join the Infinite Yield support server and get assistance from the community.
 - 💻 **Console**: `console` - Access the old Roblox console for advanced control.
