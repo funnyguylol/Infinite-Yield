@@ -25,6 +25,3 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/DarkNetworks/Infinite
 
 - ⚙️ **VR Support**: `vr` - Use VR in all of the games you can think of!
 
-## Disclaimer
-
-This is not the official repository for Infinite Yeild, join their discord through the `discord`, `support`, or `help` command in-game.
