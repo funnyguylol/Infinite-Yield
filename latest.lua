@@ -1454,7 +1454,7 @@ PluginsHint.Position = UDim2.new(0, 25, 0, 40)
 PluginsHint.Size = UDim2.new(0, 200, 0, 50)
 PluginsHint.Font = Enum.Font.SourceSansItalic
 PluginsHint.TextSize = 16
-PluginsHint.Text = "Download plugins from the IY Discord (discord.io/infiniteyield)"
+PluginsHint.Text = "Download plugins, Not from the IY Discord, Moon Is a skid"
 PluginsHint.TextColor3 = Color3.new(1, 1, 1)
 PluginsHint.TextStrokeColor3 = Color3.new(1, 1, 1)
 PluginsHint.TextWrapped = true
@@ -2748,16 +2748,15 @@ reference = (function()
 	inviteButton.MouseButton1Click:Connect(function()
 		local func = setclipboard or toclipboard or set_clipboard or (Clipboard and Clipboard.set)
 		if func then
-			func("https://discord.io/infiniteyield")
-			inviteButton.Text = "Copied"
+			inviteButton.Text = "Disabled"
 		else
-			inviteButton.Text = "No Clipboard Function, type out the link"
+			inviteButton.Text = "Disabled"
 		end
 		local pressTime = tick()
 		lastPress = pressTime
 		wait(2)
 		if lastPress ~= pressTime then return end
-		inviteButton.Text = "Copy Discord Invite Link (https://discord.io/infiniteyield)"
+		inviteButton.Text = "Disabled"
 	end)
 	dragGUI(main)
 	main.Parent = PARENT
@@ -6249,30 +6248,6 @@ addcmd('clraliases',{},function(args, speaker)
 	notify('Aliases Modified','Removed all aliases')
 	updatesaves()
 	refreshaliases()
-end)
-
-addcmd('discord', {'support', 'help'}, function(args, speaker)
-	if toClipboard then
-		toClipboard('https://discord.com/invite/dYHag43eeU')
-		notify('Discord Invite', 'Copied to clipboard!\ndiscord.gg/dYHag43eeU')
-	else
-		notify('Discord Invite', 'discord.gg/dYHag43eeU')
-	end
-	if httprequest then
-		httprequest({
-			Url = 'http://127.0.0.1:6463/rpc?v=1',
-			Method = 'POST',
-			Headers = {
-				['Content-Type'] = 'application/json',
-				Origin = 'https://discord.com'
-			},
-			Body = HttpService:JSONEncode({
-				cmd = 'INVITE_BROWSER',
-				nonce = HttpService:GenerateGUID(false),
-				args = {code = 'dYHag43eeU'}
-			})
-		})
-	end
 end)
 
 addcmd('keepiy', {}, function(args, speaker)
