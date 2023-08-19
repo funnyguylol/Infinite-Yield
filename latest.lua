@@ -4637,6 +4637,8 @@ CMDs[#CMDs + 1] = {NAME = 'norender', DESC = 'Disable 3d Rendering to decrease t
 CMDs[#CMDs + 1] = {NAME = 'render', DESC = 'Enable 3d Rendering'}
 CMDs[#CMDs + 1] = {NAME = 'use2022materials / 2022materials', DESC = 'Enables 2022 material textures'}
 CMDs[#CMDs + 1] = {NAME = 'unuse2022materials / un2022materials', DESC = 'Disables 2022 material textures'}
+-- New Dark Networks Commands
+CMDs[#CMDs + 1] = {NAME = 'nolighting / nolight', DESC = 'Disables all lighting in the game'}
 wait()
 
 for i = 1, #CMDs do
@@ -11705,6 +11707,17 @@ addcmd('unhovername',{'nohovername'},function(args, speaker)
 		nbSelection:Destroy()
 	end
 end)
+
+addcmd('nolighting',{'nolight'},function(args, speaker)
+	local lighting = game.Lighting
+	
+	for _, child in ipairs(lighting:GetChildren()) do
+	    if not child:IsA('Sky') then
+	        child:Destroy()
+	    end
+	end
+end)
+
 
 addcmd('headsize',{},function(args, speaker)
 	local players = getPlayer(args[1], speaker)
