@@ -8,7 +8,7 @@ Infinite Yield FE is a powerful FE admin script for Roblox that brings a host of
 
 Loadstring to execute Infinite Yield!
 ```lua
-loadstring(game:HttpGet('https://raw.githubusercontent.com/DarkNetworks/Infinite-Yield/main/latest.lua'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/funnyguylol/Infinite-Yield/main/latest.lua'))()
 ```
 
 ## Features
